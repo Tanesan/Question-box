@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>質問箱</title>
+  <title>シラバス質問箱</title>
 
   <style>
   /*!
@@ -22,28 +22,31 @@
 <body>
 
   <nav class="navbar navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">たねくんの質問箱</a>
+    <a href="#" class="navbar-brand">関学生のための時間割アプリ不具合連絡ページ</a>
   </nav>
   <div class="container">
 
 
-
-    <h4 class="mt-5">質問を送信する</h4>
-
-    <p>匿名で送れる質問箱だよ。質問を入力してね！！</p>
+<h4 class="mt-5">対応済み不具合一覧</h4>
+<p>
+    - アプリ初回起動時は大学のwi-fi以外でアプリを起動してください。（一度起動したら、次回からは大丈夫です）<br>
+    - 友達の授業が表示されない。 => オフライン(大学のwi-fi接続時)で授業を登録すると授業の共有ができません。時間割上部にアップロードボタンをつけたのでそこで手動でアップロードすることもできます！<br/>
+    </p>
+    <h4 class="mt-5">不具合を送信する</h4>
+    <p>匿名で送れます。<br>
+    </p>
     <!-- For security-->
     <form onsubmit="sendquestion(); return false;">
       <div class="form-group mt-2">
         <textarea id="question-box" class="form-control" style="height:200px;" required></textarea>
-        <button type="submit" class="btn btn-primary mt-1">質問を送信する！</button>
+        <button type="submit" class="btn btn-primary mt-1">不具合を送信する！</button>
       </div>
     </form>
-    <h4 class="mt-5">送信された質問一覧</h4>
-    <p>どんどん返していくよー</p>
+    <h4 class="mt-5">送信された不具合一覧</h4>
 
     <table class="table" id="send_list">
       <tr>
-        <th>質問内容</th>
+        <th>不具合内容</th>
       </tr>
     </table>
 
@@ -113,11 +116,11 @@
       })
       .then(function (docRef) {
         //  console.log("Document written with ID: ", docRef.id);
-        alert("送信完了! 質問ありがとう。他に質問があればまた送ってねーーー")
+        alert("不具合連絡ありがとうございます")
         document.location.reload()
       })
       .catch(function (error) {
-        alert("エラー：", error, "エラーだからとりあえず今入力したやつコピーしといて、消えるから。", question_text);
+        alert("エラー：", error, "送信エラー", question_text);
       });
     return false;
   }
