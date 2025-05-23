@@ -46,6 +46,7 @@
 
     <table class="table" id="send_list">
       <tr>
+        <th>投稿日</th>
         <th>不具合内容</th>
       </tr>
     </table>
@@ -80,15 +81,31 @@
 
 
   db.collection("questions").orderBy("day", "desc").get().then(function (querySnapshot) {
-    querySnapshot.forEach(function (doc) {
-      // doc.data() is never undefined for query doc snapshots
-      //  console.log(doc.data()["content"])
+    // 現在の日付を取得し、2ヶ月前のタイムスタンプを計算
+    const now = new Date();
+    const twoMonthsAgo = Math.floor(now.getTime() / 1000) - (60 * 24 * 60 * 60); // 60日前
 
-      var tr = document.createElement("tr");
-      var th = document.createElement('th');
-      th.textContent = doc.data()["content"];
-      tr.appendChild(th);
-      document.getElementById('send_list').appendChild(tr)
+    querySnapshot.forEach(function (doc) {
+      // 2ヶ月以上前の投稿は表示しない
+      if (doc.data()["day"] >= twoMonthsAgo) {
+        // 日付を表示形式に変換
+        const postDate = new Date(doc.data()["day"] * 1000);
+        const formattedDate = `${postDate.getFullYear()}年${postDate.getMonth() + 1}月${postDate.getDate()}日`;
+        
+        var tr = document.createElement("tr");
+        
+        // 日付用のセルを作成
+        var tdDate = document.createElement('td');
+        tdDate.textContent = formattedDate;
+        tr.appendChild(tdDate);
+        
+        // 内容用のセルを作成
+        var tdContent = document.createElement('td');
+        tdContent.textContent = doc.data()["content"];
+        tr.appendChild(tdContent);
+        
+        document.getElementById('send_list').appendChild(tr);
+      }
     });
   })
   //.then(document.getElementById('send_list').appendChild(tr))
@@ -100,9 +117,36 @@
 
 
 
+  // 最後に送信された内容と時間を保存する変数
+  var lastSubmittedContent = "";
+  var lastSubmittedTime = 0;
+  
   function sendquestion() {
-
+    // 送信ボタンを取得して無効化
+    var submitButton = document.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    
+    // フォームの内容を取得
     question_text = document.getElementById("question-box").value;
+    
+    // 空の内容は送信しない
+    if (!question_text.trim()) {
+      alert("内容を入力してください");
+      submitButton.disabled = false;
+      return false;
+    }
+    
+    // 重複送信チェック（同じ内容かつ10秒以内の送信を防止）
+    const now = new Date().getTime();
+    if (question_text === lastSubmittedContent && now - lastSubmittedTime < 10000) {
+      alert("同じ内容を短時間で連続して送信することはできません");
+      submitButton.disabled = false;
+      return false;
+    }
+    
+    // 送信内容と時間を更新
+    lastSubmittedContent = question_text;
+    lastSubmittedTime = now;
 
     // Dateオブジェクトを作成
     const date = new Date();
@@ -116,11 +160,13 @@
       })
       .then(function (docRef) {
         //  console.log("Document written with ID: ", docRef.id);
-        alert("不具合連絡ありがとうございます")
-        document.location.reload()
+        alert("不具合連絡ありがとうございます");
+        document.location.reload();
       })
       .catch(function (error) {
-        alert("エラー：", error, "送信エラー", question_text);
+        alert("エラー：" + error + "送信エラー" + question_text);
+        // エラー時には送信ボタンを再度有効化
+        submitButton.disabled = false;
       });
     return false;
   }
