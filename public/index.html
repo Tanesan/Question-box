@@ -30,10 +30,15 @@
 
 <p>
   <h4>お知らせ</h4>
-    時間割がグレーになる場合、アプリのバージョンが1.5.1になっているか確認してください。
-    <a href="https://apps.apple.com/jp/app/%E9%96%A2%E5%AD%A6%E7%94%9F%E9%99%90%E5%AE%9A-%E6%99%82%E9%96%93%E5%89%B2%E3%82%A2%E3%83%97%E3%83%AA/id6444226126?itsct=apps_box_badge&itscg=30200">AppStore</a>でVer.1.5へアップデートお願いします。
-    Androidユーザーの方は<a href="https://play.google.com/store/apps/details?id=io.timeschedule.kgu&pcampaignid=web_share"></a>Google Play</a>よりアップデートお願いします。
-    <img src="update.png" style="width:100%;" />
+    v3をリリースしました。
+    <a href="https://apps.apple.com/jp/app/%E9%96%A2%E5%AD%A6%E7%94%9F%E9%99%90%E5%AE%9A-%E6%99%82%E9%96%93%E5%89%B2%E3%82%A2%E3%83%97%E3%83%AA/id6444226126?itsct=apps_box_badge&itscg=30200">App Store</a>、
+    <a href="https://play.google.com/store/apps/details?id=io.timeschedule.kgu&pcampaignid=web_share">Google Play</a>で、
+    ご利用中のバージョンがv3になっているかご確認ください。
+    入力内容が消えてしまう不具合などを修正しています。
+    これまでにサーバーへアップロードしたことがある方は、設定画面の最下部からデータを上書きできます。
+    シラバスのデータは3/2 22:58付けで2026年度のものに更新しました。
+    画面上部の更新ボタン左側の日付が3/2以降になっているかをご確認ください。
+    3/2以前の場合は、更新ボタンを押してください。
     <!-- For security-->
     <p>不具合を報告する</p>
     <form onsubmit="sendquestion(); return false;">
@@ -83,7 +88,7 @@
   db.collection("questions").orderBy("day", "desc").get().then(function (querySnapshot) {
     // 現在の日付を取得し、2ヶ月前のタイムスタンプを計算
     const now = new Date();
-    const twoMonthsAgo = Math.floor(now.getTime() / 1000) - (60 * 24 * 60 * 60); // 60日前
+    const twoMonthsAgo = Math.floor(now.getTime() / 1000) - (60 * 36 * 60 * 60); // 60日前
 
     querySnapshot.forEach(function (doc) {
       // 2ヶ月以上前の投稿は表示しない
