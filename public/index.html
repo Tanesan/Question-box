@@ -13,7 +13,106 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */.bg-dark{background-color:#343a40!important}.navbar{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}*,:after,:before{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}.navbar-dark .navbar-brand{color:#fff}.navbar-brand{display:inline-block;padding-top:.3125rem;padding-bottom:.3125rem;margin-right:1rem;font-size:1.25rem;line-height:inherit;white-space:nowrap}a{color:#007bff;text-decoration:none;background-color:transparent}@media(min-width:768px){.container,.container-md,.container-sm{max-width:45pc}}@media(min-width:576px){.container,.container-sm{max-width:540px}}.container,.container-fluid,.container-lg,.container-md,.container-sm,.container-xl{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.mt-5,.my-5{margin-top:3rem!important}h4{color:#364e96;border:solid 3px #364e96;padding:.5em;border-radius:.5em}.h4,h4{font-size:1.5rem}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:.5rem;font-weight:500;line-height:1.2}p{margin-top:0}.table,p{margin-bottom:1rem}.table{width:100%;color:#212529}table{border-collapse:collapse}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}textarea{overflow:auto;resize:vertical}.form-control{display:block;width:100%;height:1.5px;padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#495057;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;border-radius:.25rem;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}th{text-align:inherit}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}.btn-primary{color:#fff!important;background-color:#364e96!important;border-color:#364e96!important}.mt-1,.my-1{margin-top:.25rem!important}.btn-primary{color:#fff;background-color:#007bff;border-color:#007bff}.btn:not(:disabled):not(.disabled){cursor:pointer}
+  body{background-color:#f6f7fb}
+  .panel{background:#fff;border:1px solid #e3e6ef;border-radius:12px;padding:14px 16px;box-shadow:0 4px 14px rgba(30,40,60,.06)}
+  .role-badge{display:inline-block;padding:.12rem .5rem;border-radius:999px;font-size:.85rem;border:1px solid transparent}
+  .role-admin{background:#ffe8dc;border-color:#ffc8a6;color:#9a3b12}
+  .role-user{background:#e8f0ff;border-color:#c7d8ff;color:#264a9f}
+  #admin-status{color:#5b5f6a;font-size:.9rem}
+  .admin-tools{margin-top:.75rem;text-align:right}
+  .admin-tools .btn{padding:.2rem .5rem;font-size:.85rem}
 
+  @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;700&display=swap');
+  :root{
+    --ink:#111827;
+    --muted:#6b7280;
+    --brand:#0f3d66;
+    --accent:#ff8a4c;
+    --bg1:#f4f0e8;
+    --bg2:#e8eef6;
+    --card:#ffffff;
+    --line:#e6e3dc;
+  }
+  body{
+    font-family:"Zen Kaku Gothic New","Zen Maru Gothic","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 100%);
+    color:var(--ink);
+  }
+  .navbar{
+    background:transparent!important;
+    padding:1.2rem 0;
+  }
+  .navbar-brand{
+    font-weight:700;
+    color:var(--brand)!important;
+    letter-spacing:.02em;
+  }
+  .container{
+    max-width:880px;
+  }
+  .hero{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:22px 24px;
+    box-shadow:0 20px 60px rgba(16,24,40,.08);
+  }
+  .hero h1{
+    font-size:1.6rem;
+    margin:0 0 .4rem;
+  }
+  .hero p{
+    color:var(--muted);
+    margin:0;
+  }
+  .section-title{
+    font-size:1.1rem;
+    font-weight:700;
+    color:var(--brand);
+    margin:1.8rem 0 .8rem;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px 18px;
+    box-shadow:0 10px 30px rgba(16,24,40,.05);
+  }
+  .notice{
+    background:linear-gradient(135deg,#fff8f3 0%,#f7fbff 100%);
+    border:1px solid #f1d8c6;
+  }
+  .notice p{
+    margin-bottom:.5rem;
+  }
+  .btn-primary{
+    background-color:var(--brand)!important;
+    border-color:var(--brand)!important;
+  }
+  .btn-primary:hover{
+    background-color:#0c2f4f!important;
+    border-color:#0c2f4f!important;
+  }
+  .role-badge{display:inline-block;padding:.12rem .5rem;border-radius:999px;font-size:.85rem;border:1px solid transparent}
+  .role-admin{background:#ffe8dc;border-color:#ffc8a6;color:#9a3b12}
+  .role-user{background:#e8f0ff;border-color:#c7d8ff;color:#264a9f}
+  #admin-status{color:var(--muted);font-size:.9rem}
+  .admin-tools{margin-top:.75rem;text-align:right}
+  .admin-tools .btn{padding:.2rem .5rem;font-size:.85rem}
+  .table{margin-bottom:0}
+  .table td,.table th{border-top:1px solid var(--line)}
+  .form-control{
+    border-radius:10px;
+    border-color:#d7dbe4;
+  }
+  .form-control:focus{
+    border-color:#8bb6e0;
+    box-shadow:0 0 0 .2rem rgba(139,182,224,.2);
+  }
+  .hint{
+    color:var(--muted);
+    font-size:.9rem;
+  }
 
   </style>
 
@@ -21,46 +120,69 @@
 
 <body>
 
-  <nav class="navbar navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">関学生のための時間割アプリ不具合連絡ページ</a>
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="navbar-brand">関学生のための時間割アプリ 不具合連絡</a>
+    </div>
   </nav>
   <div class="container">
 
 
+  <div class="hero">
+    <h1>不具合の共有ページ</h1>
+    <p>見つけた問題や再現手順を送ってください。できるだけ早く改善します。</p>
+  </div>
 
-<p>
-  <h4>お知らせ</h4>
-    v3をリリースしました。
-    <a href="https://apps.apple.com/jp/app/%E9%96%A2%E5%AD%A6%E7%94%9F%E9%99%90%E5%AE%9A-%E6%99%82%E9%96%93%E5%89%B2%E3%82%A2%E3%83%97%E3%83%AA/id6444226126?itsct=apps_box_badge&itscg=30200">App Store</a>、
-    <a href="https://play.google.com/store/apps/details?id=io.timeschedule.kgu&pcampaignid=web_share">Google Play</a>で、
-    ご利用中のバージョンがv3になっているかご確認ください。
-    入力内容が消えてしまう不具合などを修正しています。
-    これまでにサーバーへアップロードしたことがある方は、設定画面の最下部からデータを上書きできます。
-    シラバスのデータは3/2 22:58付けで2026年度のものに更新しました。
-    画面上部の更新ボタン左側の日付が3/2以降になっているかをご確認ください。
-    3/2以前の場合は、更新ボタンを押してください。
-    <!-- For security-->
-    <p>不具合を報告する</p>
+  <div class="section-title">お知らせ</div>
+  <div class="card notice">
+    <p>v3をリリースしました。</p>
+    <p>
+      <a href="https://apps.apple.com/jp/app/%E9%96%A2%E5%AD%A6%E7%94%9F%E9%99%90%E5%AE%9A-%E6%99%82%E9%96%93%E5%89%B2%E3%82%A2%E3%83%97%E3%83%AA/id6444226126?itsct=apps_box_badge&itscg=30200">App Store</a>、
+      <a href="https://play.google.com/store/apps/details?id=io.timeschedule.kgu&pcampaignid=web_share">Google Play</a>で、
+      ご利用中のバージョンがv3になっているかご確認ください。
+    </p>
+    <p>入力内容が消えてしまう不具合などを修正しています。</p>
+    <p>これまでにサーバーへアップロードしたことがある方は、設定画面の最下部からデータを上書きできます。</p>
+    <p>シラバスのデータは3/2 22:58付けで2026年度のものに更新しました。</p>
+    <p>画面上部の更新ボタン左側の日付が3/2以降になっているかをご確認ください。</p>
+    <p>3/2以前の場合は、更新ボタンを押してください。</p>
+  </div>
+
+  <!-- For security-->
+  <div class="section-title">不具合を報告する</div>
+  <div class="card">
+    <p class="hint">再現手順、発生した画面、直前に行った操作があると助かります。</p>
     <form onsubmit="sendquestion(); return false;">
       <div class="form-group mt-2">
-        <textarea id="question-box" class="form-control" style="height:200px;" required></textarea>
+        <input id="app-version" class="form-control" placeholder="アプリのバージョン（任意）" style="height:44px;" />
+        <textarea id="question-box" class="form-control" style="height:200px;margin-top:.5rem;" required></textarea>
         <button type="submit" class="btn btn-primary mt-1">不具合を送信する！</button>
       </div>
     </form>
-    <h4 class="mt-5">送信された不具合一覧</h4>
+  </div>
 
+  <div class="section-title">送信された不具合一覧</div>
+  <div class="card">
     <table class="table" id="send_list">
       <tr>
         <th>投稿日</th>
+        <th>投稿者</th>
         <th>不具合内容</th>
       </tr>
     </table>
+  </div>
+  <div class="admin-tools">
+    <button type="button" id="admin-login" class="btn btn-primary">管理者ログイン</button>
+    <button type="button" id="admin-logout" class="btn btn-primary" style="display:none;">ログアウト</button>
+    <span id="admin-status"></span>
+  </div>
 
 
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
 </body>
 <script>
@@ -82,10 +204,40 @@
 
 
   var db = firebase.firestore();
+  var auth = firebase.auth();
+  var adminEmail = "taneyannnaito1234@gmail.com";
+  var isAdmin = false;
+  var currentUserEmail = "";
+  var lastSnapshot = null;
 
 
 
-  db.collection("questions").orderBy("day", "desc").get().then(function (querySnapshot) {
+  function formatDebugInfo(doc) {
+    if (!isAdmin) {
+      return "";
+    }
+    var debug = doc.data()["debug"] || null;
+    var appVersion = doc.data()["appVersion"] || "";
+    if (!debug && !appVersion) {
+      return "";
+    }
+    var parts = [];
+    if (appVersion) {
+      parts.push("AppVer: " + appVersion);
+    }
+    if (debug && debug.os) {
+      parts.push("OS: " + debug.os);
+    }
+    if (debug && debug.platform) {
+      parts.push("Platform: " + debug.platform);
+    }
+    return parts.length ? " / " + parts.join(" / ") : "";
+  }
+
+  function renderQuestions(querySnapshot) {
+    var table = document.getElementById('send_list');
+    table.innerHTML = "<tr><th>投稿日</th><th>投稿者</th><th>不具合内容</th></tr>";
+
     // 現在の日付を取得し、2ヶ月前のタイムスタンプを計算
     const now = new Date();
     const twoMonthsAgo = Math.floor(now.getTime() / 1000) - (60 * 36 * 60 * 60); // 60日前
@@ -103,16 +255,34 @@
         var tdDate = document.createElement('td');
         tdDate.textContent = formattedDate;
         tr.appendChild(tdDate);
+
+        // 投稿者用のセルを作成
+        var tdRole = document.createElement('td');
+        var role = doc.data()["role"] || "user";
+        var roleSpan = document.createElement('span');
+        roleSpan.className = "role-badge " + (role === "admin" ? "role-admin" : "role-user");
+        roleSpan.textContent = role === "admin" ? "管理者" : "ユーザー";
+        tdRole.appendChild(roleSpan);
+        tr.appendChild(tdRole);
         
         // 内容用のセルを作成
         var tdContent = document.createElement('td');
-        tdContent.textContent = doc.data()["content"];
+        var contentText = doc.data()["content"] || "";
+        var debugText = formatDebugInfo(doc);
+        tdContent.textContent = contentText + debugText;
         tr.appendChild(tdContent);
         
         document.getElementById('send_list').appendChild(tr);
       }
     });
-  })
+  }
+
+  db.collection("questions").orderBy("day", "desc").onSnapshot(function (querySnapshot) {
+    lastSnapshot = querySnapshot;
+    renderQuestions(querySnapshot);
+  }, function (error) {
+    console.log("Firestore listener error:", error);
+  });
   //.then(document.getElementById('send_list').appendChild(tr))
 
 
@@ -125,7 +295,35 @@
   // 最後に送信された内容と時間を保存する変数
   var lastSubmittedContent = "";
   var lastSubmittedTime = 0;
-  
+
+  function getClientDebugInfo() {
+    var ua = navigator.userAgent || "";
+    var platform = navigator.platform || "";
+    var appVersion = navigator.appVersion || "";
+    var vendor = navigator.vendor || "";
+    var language = navigator.language || "";
+    var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    var isIOS = /iPad|iPhone|iPod/.test(ua);
+    var isAndroid = /Android/.test(ua);
+
+    return {
+      userAgent: ua,
+      platform: platform,
+      appVersion: appVersion,
+      vendor: vendor,
+      language: language,
+      timezone: timezone,
+      os: isIOS ? "iOS" : (isAndroid ? "Android" : "Other"),
+      screen: {
+        width: screen.width,
+        height: screen.height,
+        colorDepth: screen.colorDepth
+      },
+      deviceMemory: navigator.deviceMemory || null,
+      hardwareConcurrency: navigator.hardwareConcurrency || null
+    };
+  }
+
   function sendquestion() {
     // 送信ボタンを取得して無効化
     var submitButton = document.querySelector('button[type="submit"]');
@@ -159,14 +357,24 @@
     const today_mm = date.getTime();
     const today_s = Math.floor(today_mm / 1000);
 
+    var debugInfo = getClientDebugInfo();
+    var appVersionInput = document.getElementById("app-version").value.trim();
+    var role = isAdmin ? "admin" : "user";
+
     db.collection("questions").add({
         content: question_text,
-        day: today_s
+        day: today_s,
+        role: role,
+        authorEmail: currentUserEmail,
+        appVersion: appVersionInput,
+        debug: debugInfo
       })
       .then(function (docRef) {
         //  console.log("Document written with ID: ", docRef.id);
         alert("不具合連絡ありがとうございます");
-        document.location.reload();
+        document.getElementById("question-box").value = "";
+        document.getElementById("app-version").value = "";
+        submitButton.disabled = false;
       })
       .catch(function (error) {
         alert("エラー：" + error + "送信エラー" + question_text);
@@ -175,6 +383,44 @@
       });
     return false;
   }
+
+  function updateAdminStatus(user) {
+    var statusEl = document.getElementById("admin-status");
+    var loginBtn = document.getElementById("admin-login");
+    var logoutBtn = document.getElementById("admin-logout");
+
+    if (user && user.email) {
+      currentUserEmail = user.email;
+      isAdmin = (user.email === adminEmail);
+      loginBtn.style.display = "none";
+      logoutBtn.style.display = "inline-block";
+      statusEl.textContent = isAdmin ? "管理者としてログイン中" : "ユーザーとしてログイン中";
+    } else {
+      currentUserEmail = "";
+      isAdmin = false;
+      loginBtn.style.display = "inline-block";
+      logoutBtn.style.display = "none";
+      statusEl.textContent = "未ログイン";
+    }
+    if (lastSnapshot) {
+      renderQuestions(lastSnapshot);
+    }
+  }
+
+  document.getElementById("admin-login").addEventListener("click", function () {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider).catch(function (error) {
+      alert("ログインエラー：" + error.message);
+    });
+  });
+
+  document.getElementById("admin-logout").addEventListener("click", function () {
+    auth.signOut();
+  });
+
+  auth.onAuthStateChanged(function (user) {
+    updateAdminStatus(user);
+  });
 </script>
 
 </html>
